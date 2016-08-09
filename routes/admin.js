@@ -8,6 +8,7 @@ var Model = require('../model/model');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  
   res.render('admin/index', { title: 'Express' });
   // res.send('respond with a resource');
 });
