@@ -1,14 +1,12 @@
 var mongoose = require('mongoose');
 
 
-var dbURI = 'mongodb://localhost/BusTracker';
+// var dbURI = 'mongodb://localhost/BusTracker';
+var dbURI = 'mongodb://<dbuser>:<dbpassword>@ds013212.mlab.com:13212/bustracker';
+
 //Lets connect to our database using the DB server URL.
 db = mongoose.connect(dbURI);
 
-//atach listiner to see if connected
-//mongoose.connection.once('connected', function() {
-//	console.log("Connected to database")
-//});
 
 mongoose.connection.on('connected', function () {  
   console.log('Mongoose default connection open to ' + dbURI);
