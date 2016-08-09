@@ -1,0 +1,30 @@
+ <div id="paper-middle">
+                <div id="mapContainer"></div>
+            </div>
+
+ <script src="/assets/js/jhere-custom.js"></script>
+   <script>
+	$(window).on('load', function() {
+        $('#mapContainer').jHERE({
+            center: [52.500556, 13.398889],
+            type: 'smart',
+            zoom: 10
+        }).jHERE('/marker', [52.500556, 13.338889], {
+            icon: '/assets/img/marker.png',
+            anchor: {
+                x: 12,
+                y: 32
+            },
+            click: function() {
+                alert('Hallo from Berlin!');
+            }
+        })
+            .jHERE('route', [52.711, 13.011], [52.514, 13.453], {
+                color: '#FFA200',
+                marker: {
+                    fill: '#86c440',
+                    text: '#'
+                }
+            });
+    });
+    </script>

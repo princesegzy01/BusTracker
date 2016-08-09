@@ -1,0 +1,651 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Apricot V1.2
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    // Le styles
+    // script(type='text/javascript', src='http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.js')
+    script(type='text/javascript', src='/assets/js/jquery.min.js')
+    link(rel='stylesheet', href='/assets/css/style.css')
+    link(rel='stylesheet', href='/assets/css/loader-style.css')
+    link(rel='stylesheet', href='/assets/css/bootstrap.css')
+    link(rel='stylesheet', href='/assets/js/button/ladda/ladda.min.css')
+    // HTML5 shim, for IE6-8 support of HTML5 elements
+    //if lt IE 9
+      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+    script(src='/js/lib/angular/angular.min.js')
+    script(src='/js/lib/angular/angular-route.min.js')
+
+    // Fav and touch icons
+    link(rel='shortcut icon', href='/assets/ico/minus.png')
+  body(ng-app="BusTracker")
+    // Preloader
+    #preloader
+      #status  
+    // TOP NAVBAR
+    nav.navbar.navbar-static-top(role='navigation')
+      .container-fluid
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle(data-target='#bs-example-navbar-collapse-1', data-toggle='collapse', type='button')
+            span.entypo-menu
+          button.navbar-toggle.toggle-menu-mobile.toggle-left(type='button')
+            span.entypo-list-add
+          #logo-mobile.visible-xs
+            h1
+              | Apricot
+              span v1.2
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li.dropdown
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                i.icon-conversation(style='font-size:20px;')
+                .noft-red 23
+              ul.dropdown-menu.dropdown-wrap(style='margin: 11px 0 0 9px;', role='menu')
+                li
+                  a(href='#')
+                    img.img-msg.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/1.jpg')
+                    | Jhon Doe 
+                    b Just Now
+                li.divider
+                li
+                  a(href='#')
+                    img.img-msg.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/women/1.jpg')
+                    | Jeniffer 
+                    b 3 Min Ago
+                li.divider
+                li
+                  a(href='#')
+                    img.img-msg.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/2.jpg')
+                    | Dave 
+                    b 2 Hours Ago
+                li.divider
+                li
+                  a(href='#')
+                    img.img-msg.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/3.jpg')
+                    i Keanu
+                    b 1 Day Ago
+                li.divider
+                li
+                  a(href='#')
+                    img.img-msg.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/4.jpg')
+                    i Masashi
+                    b 2 Mounth Ago
+                li.divider
+                li
+                  div See All Messege
+            li
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                i.icon-warning.tooltitle(style='font-size:19px;')
+                .noft-green 5
+              ul.dropdown-menu.dropdown-wrap(style='margin: 12px 0 0 0;', role='menu')
+                li
+                  a(href='#')
+                    span.noft-icon.maki-bus(style='background:#DF2135')
+                    i From Station
+                    b 01B
+                li.divider
+                li
+                  a(href='#')
+                    span.noft-icon.maki-ferry(style='background:#AB6DB0')
+                    i Departing at
+                    b 9:00 AM
+                li.divider
+                li
+                  a(href='#')
+                    span.noft-icon.maki-aboveground-rail(style='background:#FFA200')
+                    i Delay for
+                    b 09 Min
+                li.divider
+                li
+                  a(href='#')
+                    span.noft-icon.maki-airport(style='background:#86C440')
+                    i Take of
+                    b 08:30 AM
+                li.divider
+                li
+                  a(href='#')
+                    span.noft-icon.maki-bicycle(style='background:#0DB8DF')
+                    i Take of
+                    b 08:30 AM
+                li.divider
+                li
+                  div See All Notification
+            li
+              a(href='#')
+                i.icon-help.tooltitle(data-toggle='tooltip', data-placement='bottom', title='Help', style='font-size:20px;')
+          #nt-title-container.navbar-left.running-text.visible-lg
+            ul.date-top
+              li.entypo-calendar(style='margin-right:5px')
+              li#Date
+            ul#digital-clock.digital
+              li.entypo-clock(style='margin-right:5px')
+              li.hour
+              li :
+              li.min
+              li :
+              li.sec
+              li.meridiem
+            ul#nt-title
+              li
+                i.wi-day-lightning
+                |   Berlin 
+                b 85
+                i.wi-fahrenheit
+                |  ; 15km/h
+              li
+                i.wi-day-lightning
+                |   Yogyakarta 
+                b 85
+                i.wi-fahrenheit
+                |  ; Tonight- 72 °F (22.2 °C)
+              li
+                i.wi-day-lightning
+                |   Sttugart 
+                b 85
+                i.wi-fahrenheit
+                |  ; 15km/h
+              li
+                i.wi-day-lightning
+                |   Muchen 
+                b 85
+                i.wi-fahrenheit
+                |  ; 15km/h
+              li
+                i.wi-day-lightning
+                |   Frankurt 
+                b 85
+                i.wi-fahrenheit
+                |  ; 15km/h
+          ul.nav.navbar-nav.navbar-right(style='margin-right:0;')
+            li
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                img.admin-pic.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/10.jpg')
+                | Hi, Dave Mattew 
+                b.caret
+              ul.dropdown-setting.dropdown-menu(style='margin-top:14px;', role='menu')
+                li
+                  a(href='#')
+                    span.entypo-user
+                    |   My Profile
+                li
+                  a(href='#')
+                    span.entypo-vcard
+                    |   Account Setting
+                li
+                  a(href='#')
+                    span.entypo-lifebuoy
+                    |   Help
+                li.divider
+                li
+                  a(href='#')
+                    span.entypo-logout
+                    |   Logout
+            li
+              a.dropdown-toggle(data-toggle='dropdown', href='#')
+                span.icon-gear
+                |   Setting
+              ul.dropdown-setting.dropdown-menu(role='menu')
+                li.theme-bg
+                  #button-bg
+                  #button-bg2
+                  #button-bg3
+                  #button-bg5
+                  #button-bg6
+                  #button-bg7
+                  #button-bg8
+                  #button-bg9
+                  #button-bg10
+                  #button-bg11
+                  #button-bg12
+                  #button-bg13
+            li.hidden-xs
+              a.toggle-left(href='#')
+                span.entypo-list-add(style='font-size:20px;')
+        // /.navbar-collapse
+      // /.container-fluid
+    // /END OF TOP NAVBAR
+    // SIDE MENU
+    #skin-select
+      #logo
+        h1
+          | Apricot
+          span v1.2
+      a#toggle
+        span.entypo-menu
+      .dark
+        form(action='#')
+          span
+            input.search.rounded.id_search(type='text', name='search', value='', placeholder='Search Menu...', autofocus='')
+      .search-hover
+        form#demo-2
+          input.id_search(type='search', placeholder='Search Menu...')
+      .search-hover
+        form#demo-2
+          input.id_search(type='search', placeholder='Search Menu...')
+      .skin-part
+        #tree-wrap
+          .side-bar
+            ul.topnav.menu-left-nest
+              li
+                a.title-menu-left(href='#', style='border-left:0px solid!important;')
+                  span.widget-menu
+                  i.entypo-cog.pull-right.config-wrap(data-toggle='tooltip')
+              li
+                a.tooltip-tip.ajax-load(href='#', title='Blog App')
+                  i.icon-document-edit
+                  span Blog App
+                ul
+                  li
+                    a.tooltip-tip2.ajax-load(href='blog-list.html', title='Blog List')
+                      i.entypo-doc-text
+                      span Blog List
+                  li
+                    a.tooltip-tip2.ajax-load(href='blog-detail.html', title='Blog Detail')
+                      i.entypo-newspaper
+                      span Blog Details
+              li
+                a.tooltip-tip.ajax-load(href='social.html', title='Social')
+                  i.icon-feed
+                  span Social
+              li
+                a.tooltip-tip.ajax-load(href='Media.html', title='Media')
+                  i.icon-camera
+                  span Media
+            ul.topnav.menu-left-nest
+              li
+                a.title-menu-left(href='#', style='border-left:0px solid!important;')
+                  span.design-kit
+                  i.entypo-cog.pull-right.config-wrap(data-toggle='tooltip')
+              li
+                a.tooltip-tip.ajax-load(href='#/dashboard', title='Dashboard')
+                  i.icon-window
+                  span Dashboard
+
+              li
+                a.tooltip-tip.ajax-load(href='#/customer', title='Customer')
+                  i.icon-window
+                  span Customer
+              li
+                a.tooltip-tip.ajax-load(href='mail.html', title='Mail')
+                  i.icon-mail
+                  span mail
+                  .noft-blue 289
+              li
+                a.tooltip-tip.ajax-load(href='icon.html', title='Icons')
+                  i.icon-preview
+                  span Icons
+                  .noft-blue(style='display: inline-block; float: none;') New
+              li
+                a.tooltip-tip(href='#', title='Extra Pages')
+                  i.icon-document-new
+                  span Extra Page
+                ul
+                  li
+                    a.tooltip-tip2.ajax-load(href='blank_page.html', title='Blank Page')
+                      i.icon-media-record
+                      span Blank Page
+                  li
+                    a.tooltip-tip2.ajax-load(href='profile.html', title='Profile Page')
+                      i.icon-user
+                      span Profile Page
+                  li
+                    a.tooltip-tip2.ajax-load(href='invoice.html', title='Invoice')
+                      i.entypo-newspaper
+                      span Invoice
+                  li
+                    a.tooltip-tip2.ajax-load(href='pricing_table.html', title='Pricing Table')
+                      i.fontawesome-money
+                      span Pricing Table
+                  li
+                    a.tooltip-tip2.ajax-load(href='time-line.html', title='Time Line')
+                      i.entypo-clock
+                      span Time Line
+                  li
+                    a.tooltip-tip2(href='404.html', title='404 Error Page')
+                      i.icon-thumbs-down
+                      span 404 Error Page
+                  li
+                    a.tooltip-tip2(href='500.html', title='500 Error Page')
+                      i.icon-thumbs-down
+                      span 500 Error Page
+                  li
+                    a.tooltip-tip2(href='lock-screen.html', title='Lock Screen')
+                      i.icon-lock
+                      span Lock Screen
+              li
+                a.tooltip-tip(href='login.html', title='login')
+                  i.icon-download
+                  span Login
+            ul#menu-showhide.topnav.menu-left-nest
+              li
+                a.title-menu-left(href='#', style='border-left:0px solid!important;')
+                  span.component
+                  i.entypo-cog.pull-right.config-wrap(data-toggle='tooltip')
+               li
+                a.tooltip-tip(href='#', title='Bus Station')
+                  i.icon-monitor
+                  span Bus Station
+                ul
+                  li
+                    a.tooltip-tip2.ajax-load(href='#/bus_station/add', title='Add')
+                      i.icon-attachment
+                      span Add
+                  li
+                    a.tooltip-tip2.ajax-load(href='#/bus_station', title='View')
+                      i.icon-view-list-large
+                      span View
+                      .noft-blue-number 10
+
+              li
+                a.tooltip-tip(href='#', title='UI Element')
+                  i.icon-monitor
+                  span UI Element
+                ul
+                  li
+                    a.tooltip-tip2.ajax-load(href='element.html', title='Element')
+                      i.icon-attachment
+                      span Element
+                  li
+                    a.tooltip-tip2.ajax-load(href='button.html', title='Button')
+                      i.icon-view-list-large
+                      span Button
+                      .noft-blue-number 10
+                  li
+                    a.tooltip-tip2.ajax-load(href='wizard.html', title='Tab & Accordion')
+                      i.icon-folder
+                      span Wizard
+                      .noft-purple-number 3
+                  li
+                    a.tooltip-tip2.ajax-load(href='calendar.html', title='Calender')
+                      i.icon-calendar
+                      span Calendar
+                  li
+                    a.tooltip-tip2.ajax-load(href='tree.html', title='Tree View')
+                      i.icon-view-list
+                      span Tree View
+                  li
+                    a.tooltip-tip2.ajax-load(href='grids.html', title='Grids')
+                      i.icon-menu
+                      span Grids
+                  li
+                    a.tooltip-tip2.ajax-load(href='chart.html', title='Chart')
+                      i.icon-graph-pie
+                      span Chart
+                  li
+                    a.tooltip-tip.ajax-load(href='typhography.html', title='Typhoghrapy')
+                      i.icon-information
+                      span Typhoghrapy
+              li
+                a.tooltip-tip(href='#', title='Form')
+                  i.icon-document
+                  span Form
+                ul
+                  li
+                    a.tooltip-tip2.ajax-load(href='form-element.html', title='Form Elements')
+                      i.icon-document-edit
+                      span Form Elements
+                  li
+                    a.tooltip-tip2.ajax-load(href='andvance-form.html', title='Andvance Form')
+                      i.icon-map
+                      span Andvance Form
+                  li
+                    a.tooltip-tip2.ajax-load(href='text-editor.html', title='Text Editor')
+                      i.icon-code
+                      span Text Editor
+                  li
+                    a.tooltip-tip2.ajax-load(href='file-upload.html', title='File Upload')
+                      i.icon-upload
+                      span File Upload
+              li
+                a.tooltip-tip(href='#', title='Tables')
+                  i.icon-view-thumb
+                  span Tables
+                ul
+                  li
+                    a.tooltip-tip2.ajax-load(href='table-static.html', title='Table Static')
+                      i.entypo-layout
+                      span Table Static
+                  li
+                    a.tooltip-tip2.ajax-load(href='table-dynamic.html', title='Table Dynamic')
+                      i.entypo-menu
+                      span Table Dynamic
+              li
+                a.tooltip-tip.ajax-load(href='map.html', title='Map')
+                  i.icon-location
+                  span Map
+            .side-dash
+              h3
+                span Device
+              ul.side-dashh-list
+                li
+                  | Avg. Traffic
+                  span
+                    | 25k
+                    i.fa.fa-arrow-circle-up(style='color:#44BBC1;')
+                li
+                  | Visitors
+                  span
+                    | 80%
+                    i.fa.fa-arrow-circle-down(style='color:#AB6DB0;')
+                li
+                  | Convertion Rate
+                  span
+                    | 13m
+                    i.fa.fa-arrow-circle-up(style='color:#19A1F9;')
+              h3
+                span Traffic
+              ul.side-bar-list
+                li
+                  | Avg. Traffic
+                  .linebar 5,7,8,9,3,5,3,8,5
+                li
+                  | Visitors
+                  .linebar2 9,7,8,9,5,9,6,8,7
+                li
+                  | Convertion Rate
+                  .linebar3 5,7,8,9,3,5,3,8,5
+              h3
+                span Visitors
+              #g1.gauge(style='height:180px')
+    // END OF SIDE MENU
+    // PAPER WRAP
+    .wrap-fluid
+      .container-fluid.paper-wrap.bevel.tlbr
+        // CONTENT
+        // TITLE
+        .row
+          #paper-top
+            .col-sm-3
+              h2.tittle-content-header
+                i.icon-media-record
+                span
+                  | Blank Page
+            .col-sm-7
+              .devider-vertical.visible-lg
+              .tittle-middle-header
+                .alert
+                  button.close(type='button', data-dismiss='alert') ×
+                  span.tittle-alert.entypo-info-circled
+                  |                                 Welcome back, 
+                  strong Dave mattew!
+                  |   Your last sig in at Yesterday, 16:54 PM
+            .col-sm-2
+              .devider-vertical.visible-lg
+              .btn-group.btn-wigdet.pull-right.visible-lg
+                .btn
+                  | Widget
+                button.btn.dropdown-toggle(data-toggle='dropdown', type='button')
+                  span.caret
+                  span.sr-only Toggle Dropdown
+                ul.dropdown-menu(role='menu')
+                  li
+                    a(href='#')
+                      span.entypo-plus-circled.margin-iconic
+                      | Add New
+                  li
+                    a(href='#')
+                      span.entypo-heart.margin-iconic
+                      | Favorite
+                  li
+                    a(href='#')
+                      span.entypo-cog.margin-iconic
+                      | Setting
+        // / TITLE
+        // BREADCRUMB
+        ul#breadcrumb
+          li
+            span.entypo-home
+          li
+            i.fa.fa-lg.fa-angle-right
+          li
+            a(href='#', title='Sample page 1') Extra Pages
+          li
+            i.fa.fa-lg.fa-angle-right
+          li
+            a(href='#', title='Sample page 1') Blank Page
+          li.pull-right
+            .input-group.input-widget
+              input.form-control(style='border-radius:15px', type='text', placeholder='Search...')
+        // END OF BREADCRUMB
+        .content-wrap
+          .row
+            block content
+
+
+
+
+
+          // /END OF CONTENT
+          // FOOTER
+          .footer-space
+          #footer
+            .devider-footer-left
+            .time
+              p#spanDate
+              p#clock
+            .copyright
+              | Make with Love
+              span.entypo-heart
+              | 2014 
+              a(href='http://gamatechno.com') Thesmile
+              |  All Rights Reserved
+            .devider-footer
+          // / END OF FOOTER
+      // END OF PAPER WRAP
+      // RIGHT SLIDER CONTENT
+      .sb-slidebar.sb-right
+        .right-wrapper
+          .row
+            h3
+              span
+                i.entypo-gauge
+                |   MAIN WIDGET
+            .col-sm-12
+              .widget-knob
+                span.chart(style='position:relative', data-percent='86')
+                  span.percent
+              .widget-def
+                b Distance traveled
+                br
+                i 86% to the check point
+              .widget-knob
+                span.speed-car(style='position:relative', data-percent='60')
+                  span.percent2
+              .widget-def
+                b The average speed
+                br
+                i 30KM/h avarage speed
+              .widget-knob
+                span.overall(style='position:relative', data-percent='25')
+                  span.percent3
+              .widget-def
+                b Overall result
+                br
+                i 30KM/h avarage Result
+        .right-wrapper(style='margin-top:0;')
+          .row
+            h3
+              span
+                i.entypo-chat
+                |   CHAT
+            .col-sm-12
+              span.label.label-warning.label-chat Online
+              ul.chat
+                li
+                  a(href='#')
+                    span
+                      img.img-chat.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/20.jpg')
+                    b Dave Junior
+                    br
+                    i Last seen : 08:00 PM
+                li
+                  a(href='#')
+                    span
+                      img.img-chat.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/21.jpg')
+                    b Kenneth Lucas
+                    br
+                    i Last seen : 07:21 PM
+                li
+                  a(href='#')
+                    span
+                      img.img-chat.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/22.jpg')
+                    b Heidi Perez
+                    br
+                    i Last seen : 05:43 PM
+              span.label.label-chat Offline
+              ul.chat
+                li
+                  a(href='#')
+                    span
+                      img.img-chat.img-offline.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/23.jpg')
+                    b Dave Junior
+                    br
+                    i Last seen : 08:00 PM
+                li
+                  a(href='#')
+                    span
+                      img.img-chat.img-offline.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/women/24.jpg')
+                    b Kenneth Lucas
+                    br
+                    i Last seen : 07:21 PM
+                li
+                  a(href='#')
+                    span
+                      img.img-chat.img-offline.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/25.jpg')
+                    b Heidi Perez
+                    br
+                    i Last seen : 05:43 PM
+                li
+                  a(href='#')
+                    span
+                      img.img-chat.img-offline.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/women/25.jpg')
+                    b Kenneth Lucas
+                    br
+                    i Last seen : 07:21 PM
+                li
+                  a(href='#')
+                    span
+                      img.img-chat.img-offline.img-circle(alt='', src='http://api.randomuser.me/portraits/thumb/men/26.jpg')
+                    b Heidi Perez
+                    br
+                    i Last seen : 05:43 PM
+      // END OF RIGHT SLIDER CONTENT
+      // MAIN EFFECT
+      script(type='text/javascript', src='/assets/js/preloader.js')
+      script(type='text/javascript', src='/assets/js/bootstrap.js')
+      script(type='text/javascript', src='/assets/js/app.js')
+      script(type='text/javascript', src='/assets/js/load.js')
+      script(type='text/javascript', src='/assets/js/main.js')
+
+      //Angular
+     
+      script(src='/js/app.js')
+      script(src='/js/service.js')
+      script(src='/js/controller.js')
+      script(src='/js/filter.js')
+      script(src='/js/directives.js')

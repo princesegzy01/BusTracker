@@ -1,0 +1,31 @@
+  <div class="body-nest" id="tableStatic">
+
+        <section id="flip-scroll">
+
+            <table class="table table-bordered table-striped cf">
+                <thead class="cf">
+                    <tr>
+                        <th>SN</th>
+                        <th>State</th>
+                        <th>Name</th>
+                        <th class="numeric">Longitude</th>
+                        <th class="numeric">Latitude</th>
+                        <th class="numeric">Date Created</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="station in stations">
+                        <td>#{{$index + 1}}</td>
+                        <td>{{station.state}}</td>
+                        <td>{{station.name}}</td>
+                        <td class="numeric">{{station.longitude}}</td>
+                        <td class="numeric">{{station.latitude}}</td>
+                        <td class="numeric">{{station.date_creacdted}}</td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>

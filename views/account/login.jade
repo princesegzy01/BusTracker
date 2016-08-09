@@ -1,0 +1,135 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title Apricot V 1.3
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    // Le styles
+    script(type='text/javascript', src='/assets/js/jquery.min.js')
+    // <link rel="stylesheet" href="/assets/css/style.css">
+    link(rel='stylesheet', href='/assets/css/loader-style.css')
+    link(rel='stylesheet', href='/assets/css/bootstrap.css')
+    link(rel='stylesheet', href='/assets/css/signin.css')
+    // HTML5 shim, for IE6-8 support of HTML5 elements
+    //if lt IE 9
+      script(src='http://html5shim.googlecode.com/svn/trunk/html5.js')
+    // Fav and touch icons
+    link(rel='shortcut icon', href='/assets/ico/minus.png')
+  body
+    // Preloader
+    #preloader
+      #status  
+    .container
+      #login-wrapper
+        .row
+          .col-md-4.col-md-offset-4
+            #logo-login
+              h1
+                | Bus Tracker
+                span v1.3
+        .row
+          .col-md-4.col-md-offset-4
+            .account-box
+              form(role='form')
+                .form-group
+                  a.pull-right.label-forgot(href='#') Forgot email?
+                  label(for='inputUsernameEmail') Username or email
+                  input#inputUsernameEmail.form-control(type='text')
+                .form-group
+                  a.pull-right.label-forgot(href='#') Forgot password?
+                  label(for='inputPassword') Password
+                  input#inputPassword.form-control(type='password')
+                .checkbox.pull-left
+                  label
+                    input(type='checkbox')
+                    | Remember me
+                button.btn.btn.btn-primary.pull-right(type='submit')
+                  | Log In
+              a.forgotLnk(href='index.html')
+              .or-box
+                center
+                  span.text-center.login-with
+                    | Login or 
+                    b Sign Up
+                .row
+                  .col-md-6.row-block
+                    a.btn.btn-facebook.btn-block(href='index.html')
+                      span.entypo-facebook.space-icon
+                      | Facebook
+                  .col-md-6.row-block
+                    a.btn.btn-twitter.btn-block(href='index.html')
+                      span.entypo-twitter.space-icon
+                      | Twitter
+                .row(style='margin-top:25px')
+                  .col-md-6.row-block
+                    a.btn.btn-google.btn-block(href='index.html')
+                      span.entypo-gplus.space-icon
+                      | Google +
+                  .col-md-6.row-block
+                    a.btn.btn-instagram.btn-block(href='index.html')
+                      span.entypo-instagrem.space-icon
+                      | Instagram
+              hr
+              .row-block
+                .row
+                  .col-md-12.row-block
+                    a.btn.btn-primary.btn-block(href='index.html') Create New Account
+      div(style='text-align:center;margin:0 auto;')
+        h6(style='color:#fff;') Release Candidate 1.0 Powered by © Themesmiles 2014
+    #test1.gmap3
+    // END OF PAPER WRAP
+    // MAIN EFFECT
+    script(type='text/javascript', src='/assets/js/preloader.js')
+    script(type='text/javascript', src='/assets/js/bootstrap.js')
+    script(type='text/javascript', src='/assets/js/app.js')
+    script(type='text/javascript', src='/assets/js/load.js')
+    script(type='text/javascript', src='/assets/js/main.js')
+    script(src='http://maps.googleapis.com/maps/api/js?sensor=false', type='text/javascript')
+    script(type='text/javascript', src='/assets/js/map/gmap3.js')
+    script(type='text/javascript').
+      $(function() {
+      $("#test1").gmap3({
+      marker: {
+      latLng: [-7.782893, 110.402645],
+      options: {
+      draggable: true
+      },
+      events: {
+      dragend: function(marker) {
+      $(this).gmap3({
+      getaddress: {
+      latLng: marker.getPosition(),
+      callback: function(results) {
+      var map = $(this).gmap3("get"),
+      infowindow = $(this).gmap3({
+      get: "infowindow"
+      }),
+      content = results && results[1] ? results && results[1].formatted_address : "no address";
+      if (infowindow) {
+      infowindow.open(map, marker);
+      infowindow.setContent(content);
+      } else {
+      $(this).gmap3({
+      infowindow: {
+      anchor: marker,
+      options: {
+      content: content
+      }
+      }
+      });
+      }
+      }
+      }
+      });
+      }
+      }
+      },
+      map: {
+      options: {
+      zoom: 15
+      }
+      }
+      });
+      });
