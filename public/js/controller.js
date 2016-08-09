@@ -34,7 +34,8 @@ apiUrl: "http://www.michaelsodium.com/upsMobileWeb/executor/"
   
   //   //submit the form for processing
     $scope.submitForm = function(form){
-        
+
+              
         $scope.success_form =""; 
         $scope.warning_form =""; 
         $scope.error_form ="";      
@@ -64,6 +65,11 @@ apiUrl: "http://www.michaelsodium.com/upsMobileWeb/executor/"
 
               if(result.data == "Success"){
                  $scope.success_form ="true";
+
+                 $scope.txt_station_name = "";
+                 $scope.txt_longitude = "";
+                 $scope.txt_latitude = "";
+
               }else{
                   $scope.warning_form ="true";
               }
