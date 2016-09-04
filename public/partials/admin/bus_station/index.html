@@ -10,18 +10,29 @@
                         <th>Name</th>
                         <th class="numeric">Longitude</th>
                         <th class="numeric">Latitude</th>
-                        <th class="numeric">Date Created</th>
+                        <th class="numeric"></th>
+                        <th class="numeric"></th>
                         
                     </tr>
                 </thead>
                 <tbody>
                     <tr ng-repeat="station in stations">
                         <td>#{{$index + 1}}</td>
-                        <td>{{station.state}}</td>
+                        <td>{{station.state_name}}</td>
                         <td>{{station.name}}</td>
                         <td class="numeric">{{station.longitude}}</td>
                         <td class="numeric">{{station.latitude}}</td>
-                        <td class="numeric">{{station.date_creacdted}}</td>
+                        <td class="numeric">
+                            <a  href="#/bus_station/edit/{{station._id}}" class="btn btn-default">
+                                    <span class="entypo-pencil"></span>&nbsp;&nbsp;Edit
+                            </a>
+                        </td>
+                         <td class="numeric">
+                          <input style="display:none;" type="text" name="name" ng-model="station._id" />
+                            <button type="button"  class="btn btn-danger" ng-click="deleteBustation(station._id)">
+                                    <span class="entypo-cancel-squared"></span>&nbsp;&nbsp;Delete
+                            </button>
+                         </td>
                        
                     </tr>
                 </tbody>

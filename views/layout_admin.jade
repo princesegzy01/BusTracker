@@ -342,65 +342,20 @@ html(lang='en')
                       .noft-blue-number 10
 
               li
-                a.tooltip-tip(href='#', title='UI Element')
-                  i.icon-monitor
-                  span UI Element
+                a.tooltip-tip(href='#', title='Route')
+                  i.icon-map
+                  span Route
                 ul
                   li
-                    a.tooltip-tip2.ajax-load(href='element.html', title='Element')
-                      i.icon-attachment
-                      span Element
-                  li
-                    a.tooltip-tip2.ajax-load(href='button.html', title='Button')
-                      i.icon-view-list-large
-                      span Button
-                      .noft-blue-number 10
-                  li
-                    a.tooltip-tip2.ajax-load(href='wizard.html', title='Tab & Accordion')
-                      i.icon-folder
-                      span Wizard
-                      .noft-purple-number 3
-                  li
-                    a.tooltip-tip2.ajax-load(href='calendar.html', title='Calender')
-                      i.icon-calendar
-                      span Calendar
-                  li
-                    a.tooltip-tip2.ajax-load(href='tree.html', title='Tree View')
-                      i.icon-view-list
-                      span Tree View
-                  li
-                    a.tooltip-tip2.ajax-load(href='grids.html', title='Grids')
-                      i.icon-menu
-                      span Grids
-                  li
-                    a.tooltip-tip2.ajax-load(href='chart.html', title='Chart')
-                      i.icon-graph-pie
-                      span Chart
-                  li
-                    a.tooltip-tip.ajax-load(href='typhography.html', title='Typhoghrapy')
-                      i.icon-information
-                      span Typhoghrapy
-              li
-                a.tooltip-tip(href='#', title='Form')
-                  i.icon-document
-                  span Form
-                ul
-                  li
-                    a.tooltip-tip2.ajax-load(href='form-element.html', title='Form Elements')
+                    a.tooltip-tip2.ajax-load(href='#/route/add', title='Add')
                       i.icon-document-edit
-                      span Form Elements
+                      span Add route
                   li
-                    a.tooltip-tip2.ajax-load(href='andvance-form.html', title='Andvance Form')
-                      i.icon-map
-                      span Andvance Form
-                  li
-                    a.tooltip-tip2.ajax-load(href='text-editor.html', title='Text Editor')
-                      i.icon-code
-                      span Text Editor
-                  li
-                    a.tooltip-tip2.ajax-load(href='file-upload.html', title='File Upload')
-                      i.icon-upload
-                      span File Upload
+                    a.tooltip-tip2.ajax-load(href='#/route/', title='View')
+                      i.icon-document
+                      span View route
+                 
+
               li
                 a.tooltip-tip(href='#', title='Tables')
                   i.icon-view-thumb
@@ -645,7 +600,14 @@ html(lang='en')
       //Angular
      
       script(src='/js/app.js')
-      script(src='/js/service.js')
-      script(src='/js/controller.js')
-      script(src='/js/filter.js')
+      //script(src='/js/service.js')
+
+      script(src='/js/service/BusStationService.js')
+      script(src='/js/service/StateService.js')
+      script(src='/js/service/RouteService.js')
+      
+      
+      script(src='/js/controller/RouteController.js')
+      script(src='/js/controller/BusStationController.js')
+      //script(src='/js/filter.js')
       script(src='/js/directives.js')

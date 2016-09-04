@@ -1,0 +1,73 @@
+<div class="col-md-12">
+        
+   
+    <div class="alert alert-danger" ng-show="error_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-attention"></span>
+        <strong>Oh snap!</strong>&nbsp;&nbsp;Ensure all field are supplied correctly, then try again.
+    </div>
+
+     <div class="alert alert-warning" ng-show="warning_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-attention"></span>
+        <strong>Duplicate Cordinates!</strong>&nbsp;&nbsp;{{txt_station_name}} with Same Cordinates exist, please try again  </div>
+    
+    <div class="alert alert-success" ng-show="success_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-thumbs-up"></span>
+        <strong>Well done!</strong>&nbsp;&nbsp;You successfully Updated {{txt_station_name}}  Bus station.
+    </div>
+
+
+    <div class="body-nest" id="validation">
+        <div class="form_center">
+
+            <form name="form_editBusStation" id="form_editBusStation" ng-model="form_editBusStation" class="form-horizontal">
+                <fieldset>
+
+                <input type="hidden"  ng-model="txt_busstation_id">
+
+
+                    <div class="control-group">
+                        <label class="control-label" for="name">Bus Station Name : </label>
+                        <div class="controls">
+                            <input type="text" ng-model="txt_station_name" required class="form-control" name="name" id="name">
+                        </div>
+                    </div>
+                     <div class="control-group">
+                        <label class="control-label" for="email">State</label>
+                        <div class="controls">
+                            <select ng-model="sel_state" class="form-control">
+                                <option value="{{sel_state}}"> {{state_name}} </option>                           
+                                <option ng-repeat="state in states" value="{{state._id}}">
+                                    {{state.states_name}}
+                                </option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="email">Longitude</label>
+                        <div class="controls">
+                            <input  ng-model="txt_longitude"  type="text" required class="form-control" name="txt_longitude" id="txt_longitude">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="subject">Latitude</label>
+                        <div class="controls">
+                            <input type="text" required  ng-model="txt_latitude" class="form-control" name="txt_latitude" id="txt_latitude">
+                        </div>
+                    </div>
+                   
+                    <div class="form-actions" style="margin:20px 0 0 0;">
+                        <button ng-click="editStation(form_editBusStation)" type="submit" class="btn btn-primary">Update Station</button>
+                        <a href="#/bus_station/" class="btn">Cancel</a>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+

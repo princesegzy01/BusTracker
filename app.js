@@ -15,6 +15,9 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var account = require('./routes/account');
 var admin = require('./routes/admin');
+var busStationRest = require('./routes/busStationRest');
+var statesRest = require('./routes/statesRest');
+var routeRest = require('./routes/routeRest');
 
 
 
@@ -42,6 +45,10 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/account', account);
 app.use('/admin', admin);
+app.use('/', busStationRest);
+app.use('/', statesRest);
+app.use('/', routeRest);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

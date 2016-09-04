@@ -1,0 +1,82 @@
+    
+        <h2>Add Route</h2>
+<div class="col-md-6">
+        
+   
+    <div class="alert alert-danger" ng-show="error_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-attention"></span>
+        <strong>Oh snap!</strong>&nbsp;&nbsp;Ensure all field are supplied correctly, then try again.
+    </div>
+
+     <div class="alert alert-warning" ng-show="warning_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-attention"></span>
+        <strong>Duplicate Cordinates!</strong>&nbsp;&nbsp;{{txt_station_name}} with Same Cordinates exist, please try again  </div>
+    
+    <div class="alert alert-success" ng-show="success_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-thumbs-up"></span>
+        <strong>Well done!</strong>&nbsp;&nbsp;You successfully added  {{txt_station_name}} to Route List.
+    </div>
+
+
+    <div class="body-nest" id="validation">
+        <div class="form_center">
+
+            <form name="form_addBusStation" id="form_addBusStation" ng-model="form_addBusStation" class="form-horizontal">
+                <fieldset>
+
+
+                    <div class="control-group">
+                        <label class="control-label" for="name">Route Name : </label>
+                        <div class="controls">
+                            <input type="text" ng-model="txt_route_name" required class="form-control" name="name" id="name">
+                        </div>
+                    </div>
+                     <div class="control-group">
+                        <label class="control-label" for="email">Bus station</label>
+                        <div class="controls">
+                           
+                             <select ng-model="sel_busStation" class="form-control"  ng-options="busStation as busStation.name for busStation in busStations">    
+                                <option value="">-- choose an option --</option>
+                             </select>       
+
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions" style="margin:20px 0 0 0;">
+                        <button ng-click="addRouteToList()" type="submit" class="btn btn-primary">Add to list</button>
+                        <button type="reset" class="btn">Cancel</button>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="col-md-6">
+
+<!-- <div  style="background-color:blue;height:200px;" droppable drop="handleDrop()">
+</div> -->
+
+    <div style="background-color:GREEN;" droppable drop="handleDrop()" >
+        
+            <div class="alert alert-info" ng-Repeat="totalListItem in totalListItems" ddr id="{{totalListItem.station_id}}" draggable>
+             <!--  -->
+                <button data-dismiss="alert" class="close" type="button" ng-click="removeStaation($index)">×</button>
+                <span class="maki-bus"></span>
+                <strong>Heads up!</strong>&nbsp;&nbsp; <span class="bsid">{{totalListItem.station_name}} --- {{totalListItem.station_id}} </span>
+            </div>
+
+    </div>
+
+
+    <div class="form-actions" style="margin:20px 0 0 0;">
+        <button ng-click="createRoute()" type="submit" class="btn btn-primary">Create Route</button>
+    </div>
+</div>

@@ -20,9 +20,21 @@ StatesSchema = new mongoose.Schema({
 });
 // module.exports = StatesSchema;
 
+
+
+//Rotes
+RouteSchema = new mongoose.Schema({
+  name:  String,
+  date: { type: Date, default: Date.now },
+  stations : [{station_id: String}]
+  // stations : [{ id : String, station_id: String}]
+});
+
+
 module.exports = {
     StatesSchema: StatesSchema,
-    BusStationSchema: BusStationSchema  
+    BusStationSchema: BusStationSchema,
+    RouteSchema : RouteSchema
 };
 
 

@@ -1,0 +1,57 @@
+  <div class="body-nest" id="tableStatic">
+
+        <section id="flip-scroll">
+
+            <table class="table table-bordered table-striped cf">
+                <thead class="cf">
+                    <tr>
+                        <th>SN</th>
+                        <th>Route name</th>
+                        <th>Num of Stations</th>
+                        <th class=""></th>
+                        <th class=""></th>
+                        <th class="">Bus Stations in Route</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="route in routes">
+                       
+
+                        <td>#{{$index + 1}}
+
+                            <div ng-repeat="station in routes.stations">
+                                <span>#{{station.station_name}}</span>
+                            </div>
+
+                        </td>
+                        <td>{{route.name}}</td>
+                        <td>{{route.stations.length }}</td>
+                        <td class="numeric">
+                            <a  href="#/route/edit/{{route._id}}" class="btn btn-default">
+                                    <span class="entypo-pencil"></span>&nbsp;&nbsp;Edit
+                            </a>
+                        </td>
+                         <td class="numeric">
+                          <input style="display:none;" type="text" name="name" ng-model="route._id" />
+                            <button type="button"  class="btn btn-danger" ng-click="deleteRoute(route._id)">
+                                    <span class="entypo-cancel-squared"></span>&nbsp;&nbsp;Delete
+                            </button>
+                         </td>
+
+                         <td>
+                                                           
+                            <span ng-repeat="station in route.stations" style="color:red;">
+                                 {{$index + 1}}). <span  style="color:blue;" class="maki-bus"></span>&nbsp;&nbsp; {{station.station_name}}  ->
+                                </span> 
+                            </span>
+                             
+
+                         </td>
+                       
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>

@@ -6,27 +6,31 @@ var Model = require('../model/model');
 
 
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  
-  res.render('admin/index', { title: 'Express' });
-  // res.send('respond with a resource');
-});
 
-
-/* Get all State */
+// /* Get all State */
 router.get('/getstates', function(req, res, next) {
-	
-
 	var States = mongoose.model('States', StatesSchema);
 	States.find(function(err, states) {
 	  if (err) return console.error(err);
 	  // console.dir(movies);
 	  res.send(states);
 	});
-	// console.log(states);
+	
+});
 
-   // res.send(states);
+
+/* Get single State */
+router.get('/getStatesById', function(req, res, next) {
+	
+	//get bus station ID from parameter
+	state_id = req.query.state_id;
+		
+	var States = mongoose.model('States', StatesSchema);
+	States.findOne({'_id':state_id},function(err, states) {
+	  if (err) return console.error(err);
+	  res.send(states);
+	});
+	
 });
 
 
