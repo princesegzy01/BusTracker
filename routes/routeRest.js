@@ -77,8 +77,7 @@ router.get('/getRouteById', function(req, res, next) {
 	
 	//get bus station ID from parameter
 	route_id = req.query.route_id;
-	// route_id = "57b8e286696613611a6da317";
-
+	
 	// res.send(route_id);
 		
 	var Bus_Route = mongoose.model('Bus_Route', RouteSchema);

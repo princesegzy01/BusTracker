@@ -22,7 +22,7 @@ StatesSchema = new mongoose.Schema({
 
 
 
-//Rotes
+//Routes
 RouteSchema = new mongoose.Schema({
   name:  String,
   date: { type: Date, default: Date.now },
@@ -31,10 +31,76 @@ RouteSchema = new mongoose.Schema({
 });
 
 
+//Operator Schema
+OperatorSchema = new mongoose.Schema({
+  name:  String,
+  phone:  String,
+  email:  String,
+  state:  String,
+  address:  String,
+  date: { type: Date, default: Date.now }
+});
+
+
+//Operator Schema
+BusSchema = new mongoose.Schema({
+  name:  String,
+  operator:  String,
+  plate_no:  String,
+  size:  String,
+  color:  String,
+  isActive : String,
+  tracker : String,
+  route : String,
+  date: { type: Date, default: Date.now }
+});
+BusAutomobile = mongoose.model('bus_vehicle', BusSchema);
+
+//Operator Schema
+TrackerSchema = new mongoose.Schema({
+  name:  String,
+  imei : String,
+  manufacturer : String,
+  model : String,
+  isActive : String,
+  date: { type: Date, default: Date.now }
+});
+Tracker = mongoose.model('tracker', TrackerSchema);
+
+
+//Feed Scheama
+FeedSchema =  new mongoose.Schema({
+  customer : String,
+  route : String,
+  post : String,
+  like :  [
+            {
+              customer : String,
+              date: { type: Date, default: Date.now }
+
+            }
+          ],
+  comment :  [
+          {
+            customer : String,
+            post : String,
+            date: { type: Date, default: Date.now }
+          }
+        ],
+  date: { type: Date, default: Date.now }
+});
+
+
+//These are are all exported Models
 module.exports = {
     StatesSchema: StatesSchema,
     BusStationSchema: BusStationSchema,
-    RouteSchema : RouteSchema
+    RouteSchema : RouteSchema,
+    OperatorSchema:OperatorSchema,
+    // BusSchema:BusSchema,
+    TrackerSchema : TrackerSchema,
+    BusAutomobile : BusAutomobile,
+    Tracker : Tracker
 };
 
 

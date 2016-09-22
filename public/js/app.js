@@ -28,6 +28,30 @@ angular.module('BusTracker', ['ngRoute'])
 					templateUrl:"/partials/admin/bus_station/edit.html",
 					controller: 'editBusStation'
 				}).
+				when("/operator", {
+					templateUrl:"/partials/admin/operators/index.html",
+					controller: 'indexOperator'
+				}).
+				when("/operator/add", {
+					templateUrl:"/partials/admin/operators/add.html",
+					controller: 'addOperator'
+				}).
+				when("/operator/edit/:operator_id", {
+					templateUrl:"/partials/admin/operators/edit.html",
+					controller: 'editOperator'
+				}).
+				when("/bus", {
+					templateUrl:"/partials/admin/bus/index.html",
+					controller: 'indexBus'
+				}).
+				when("/bus/add", {
+					templateUrl:"/partials/admin/bus/add.html",
+					controller: 'addBus'
+				}).
+				when("/bus/edit/:bus_id", {
+					templateUrl:"/partials/admin/bus/edit.html",
+					controller: 'editBus'
+				}).
 				when("/route", {
 					templateUrl:"/partials/admin/route/index.html",
 					controller: 'routeIndex'
@@ -39,6 +63,17 @@ angular.module('BusTracker', ['ngRoute'])
 				when("/route/edit/:route_id", {
 					templateUrl:"/partials/admin/route/edit.html",
 					controller: 'editRoute'
+				}).when("/tracker", {
+					templateUrl:"/partials/admin/tracker/index.html",
+					controller: 'indexTracker'
+				}).
+				when("/tracker/add", {
+					templateUrl:"/partials/admin/tracker/add.html",
+					controller: 'addTracker'
+				}).
+				when("/tracker/edit/:tracker_id", {
+					templateUrl:"/partials/admin/tracker/edit.html",
+					controller: 'editTracker'
 				}).
 				when("/customer", {
 					templateUrl:"partials/admin/customer/index.html",

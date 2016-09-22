@@ -69,7 +69,7 @@ app.controller("addBusStation",['$scope','$http','StateCovered','BusStation',fun
         $scope.warning_form =""; 
         $scope.error_form ="";      
 
-        if(form.valid){
+        if(form.$valid == false){
            
           $scope.error_form ="true";
           return false;
@@ -151,7 +151,7 @@ app.controller('editBusStation',['$scope','$routeParams','StateCovered','BusStat
               $scope.warning_form =""; 
               $scope.error_form ="";      
 
-              if(form.valid){
+              if(form.$valid == false){
                 $scope.error_form ="true";
                 return false;
               }

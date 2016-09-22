@@ -18,6 +18,9 @@ var admin = require('./routes/admin');
 var busStationRest = require('./routes/busStationRest');
 var statesRest = require('./routes/statesRest');
 var routeRest = require('./routes/routeRest');
+var operatorRest = require('./routes/operatorRest');
+var automobileRest = require('./routes/automobileRest');
+var trackerRest = require('./routes/trackerRest');
 
 
 
@@ -48,6 +51,9 @@ app.use('/admin', admin);
 app.use('/', busStationRest);
 app.use('/', statesRest);
 app.use('/', routeRest);
+app.use('/', operatorRest);
+app.use('/', automobileRest);
+app.use('/', trackerRest);
 
 
 // catch 404 and forward to error handler

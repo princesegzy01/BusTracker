@@ -11,7 +11,8 @@
     font-family:'FontAwesome', sans-serif;
 }
 body {
-    color: #9ea7b3!important;
+    /*color: #9ea7b3!important;*/
+     color: black!important;
     font-family:"Open Sans", Arial, sans-serif!important;
     font-size: 13px!important;
     line-height: 20px;
@@ -433,7 +434,8 @@ input:-webkit-autofill, textarea:-webkit-autofill {
     border: 1px solid !important;
     border-radius: 4px;
     box-shadow: none !important;
-    color: #C7D5E0 !important;
+    /*color: #C7D5E0 !important;*/
+    color: black !important;
     font-size: 13px !important;
     height: 31px !important;
 }

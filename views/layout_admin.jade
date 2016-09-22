@@ -354,7 +354,50 @@ html(lang='en')
                     a.tooltip-tip2.ajax-load(href='#/route/', title='View')
                       i.icon-document
                       span View route
-                 
+              
+              li
+                a.tooltip-tip(href='#', title='Operator')
+                  i.fontawesome-briefcase
+                  span Bus Operator
+                ul
+                  li
+                    a.tooltip-tip2.ajax-load(href='#/operator/add', title='Add')
+                      i.icon-document-edit
+                      span Add
+                  li
+                    a.tooltip-tip2.ajax-load(href='#/operator/', title='View')
+                      i.icon-document
+                      span View
+
+
+              li
+                a.tooltip-tip(href='#', title='Bus')
+                  i.maki-bus
+                  span Bus
+                ul
+                  li
+                    a.tooltip-tip2.ajax-load(href='#/bus/add', title='Add')
+                      i.icon-document-edit
+                      span Add
+                  li
+                    a.tooltip-tip2.ajax-load(href='#/bus/', title='View')
+                      i.icon-document
+                      span View
+
+              li
+                a.tooltip-tip(href='#', title='Tracker')
+                  i.entypo-compass
+                  span Tracker
+                ul
+                  li
+                    a.tooltip-tip2.ajax-load(href='#/tracker/add', title='Add')
+                      i.icon-document-edit
+                      span Add
+                  li
+                    a.tooltip-tip2.ajax-load(href='#/tracker/', title='View')
+                      i.icon-document
+                      span View
+
 
               li
                 a.tooltip-tip(href='#', title='Tables')
@@ -605,9 +648,17 @@ html(lang='en')
       script(src='/js/service/BusStationService.js')
       script(src='/js/service/StateService.js')
       script(src='/js/service/RouteService.js')
+      script(src='/js/service/OperatorService.js')
+      script(src='/js/service/BusService.js')
+      script(src='/js/service/TrackerService.js')
       
       
-      script(src='/js/controller/RouteController.js')
       script(src='/js/controller/BusStationController.js')
+      script(src='/js/controller/RouteController.js')
+      script(src='/js/controller/OperatorController.js')
+      script(src='/js/controller/BusController.js')
+      script(src='/js/controller/TrackerController.js')
+
+
       //script(src='/js/filter.js')
       script(src='/js/directives.js')
