@@ -1,0 +1,44 @@
+  <div class="body-nest" id="tableStatic">
+
+        <section id="flip-scroll">
+
+            <table class="table table-bordered table-striped cf">
+                <thead class="cf">
+                    <tr>
+                        <th>SN</th>
+                        <th>Name</th>
+                        <th>Imei</th>
+                        <th class="numeric">Manufacturer</th>
+                        <th class="numeric">Model</th>
+                        <th class="numeric">Active</th>
+                        <th class="numeric"></th>
+                        <th class="numeric"></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="tracker in trackers">
+                        <td>#{{$index + 1}}</td>
+                        <td>{{tracker.name}}</td>
+                        <td>{{tracker.imei}}</td>
+                        <td class="numeric">{{tracker.manufacturer}}</td>
+                        <td class="numeric">{{tracker.model}}</td>
+                        <td class="numeric">{{tracker.isActive}}</td>
+                        <td class="numeric">
+                            <a  href="#/tracker/edit/{{tracker._id}}" class="btn btn-default">
+                                    <span class="entypo-pencil"></span>&nbsp;&nbsp;Edit
+                            </a>
+                        </td>
+                         <td class="numeric">
+                          <input style="display:none;" type="text" name="name" ng-model="bus._id" />
+                            <button type="button"  class="btn btn-danger" ng-click="deleteTracker(tracker._id)">
+                                    <span class="entypo-cancel-squared"></span>&nbsp;&nbsp;Delete
+                            </button>
+                         </td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>

@@ -1,0 +1,78 @@
+<div class="col-md-12">
+        
+   
+    <div class="alert alert-danger" ng-show="error_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-attention"></span>
+        <strong>Oh snap!</strong>&nbsp;&nbsp;Ensure all field are supplied correctly, then try again.
+    </div>
+
+     <div class="alert alert-warning" ng-show="warning_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-attention"></span>
+        <strong>Duplicate Records!</strong>&nbsp;&nbsp;{{txt_phone}} / {{ txt_email}} exist, please try again  </div>
+    
+    <div class="alert alert-success" ng-show="success_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-thumbs-up"></span>
+        <strong>Well done!</strong>&nbsp;&nbsp;You successfully added  {{ txt_name }} to Operators.
+    </div>
+
+
+    <div class="body-nest" id="validation">
+        <div class="form_center">
+
+            <form name="form_addTracker" id="form_addTracker" ng-model="form_addTracker" class="form-horizontal">
+                <fieldset>
+
+
+                    <div class="control-group">
+                        <label class="control-label" for="name">Tracker Name : </label>
+                        <div class="controls">
+                            <input type="text" ng-model="txt_name" required class="form-control" name="txt_name" id="txt_name">
+                        </div>
+                    </div>
+                   
+                    <div class="control-group">
+                        <label class="control-label" for="email">Imei number : </label>
+                        <div class="controls">
+                            <input  ng-model="txt_imei"  type="text" required class="form-control" name="txt_imei" id="txt_imei">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="email">Manufacturer : </label>
+                        <div class="controls">
+                            <input  ng-model="txt_manufacturer"  type="text" required class="form-control" name="txt_manufacturer" id="txt_manufacturer">
+                        </div>
+                    </div>
+                     <div class="control-group">
+                        <label class="control-label" for="email">Model : </label>
+                        <div class="controls">
+                            <input  ng-model="txt_model"  type="text" required class="form-control" name="txt_model" id="txt_model">
+                        </div>
+                    </div>
+  
+                    <div class="control-group">
+                        <label class="control-label" for="email">Active :</label>
+                        <div class="controls">
+                            <select ng-model="sel_status" class="form-control">
+                                <option value=""> - Status - </option>
+                                 <option value="Yes">Yes</option>
+                                 <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+
+                    <div class="form-actions" style="margin:20px 0 0 0;">
+                        <button ng-click="submitForm(form_addTracker)" type="submit" class="btn btn-primary">Add Tracker</button>
+                        <button type="reset" class="btn">Cancel</button>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+

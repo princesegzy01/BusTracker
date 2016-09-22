@@ -1,0 +1,44 @@
+  <div class="body-nest" id="tableStatic">
+
+        <section id="flip-scroll">
+
+            <table class="table table-bordered table-striped cf">
+                <thead class="cf">
+                    <tr>
+                        <th>SN</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th class="numeric">Email</th>
+                        <th class="numeric">State</th>
+                         <th class="numeric">Address</th>
+                        <th class="numeric"></th>
+                        <th class="numeric"></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="operators in operators">
+                        <td>#{{$index + 1}}</td>
+                        <td>{{operators.name}}</td>
+                        <td>{{operators.phone}}</td>
+                        <td class="numeric">{{operators.email}}</td>
+                        <td class="numeric">{{operators.state_name}}</td>
+                        <td class="numeric">{{operators.address}}</td>
+                        <td class="numeric">
+                            <a  href="#/operator/edit/{{operators._id}}" class="btn btn-default">
+                                    <span class="entypo-pencil"></span>&nbsp;&nbsp;Edit
+                            </a>
+                        </td>
+                         <td class="numeric">
+                          <input style="display:none;" type="text" name="name" ng-model="operators._id" />
+                            <button type="button"  class="btn btn-danger" ng-click="deleteOperator(operators._id)">
+                                    <span class="entypo-cancel-squared"></span>&nbsp;&nbsp;Delete
+                            </button>
+                         </td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>

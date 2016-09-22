@@ -1,0 +1,54 @@
+  <div class="body-nest" id="tableStatic">
+
+        <section id="flip-scroll">
+
+            <table class="table table-bordered table-striped cf">
+                <thead class="cf">
+                    <tr>
+                        <th>SN</th>
+                        <th>Bus Name</th>
+                        <th>Operator</th>
+                        <th class="numeric">Plate_no</th>
+                        <th class="numeric">Size</th>
+                        <th class="numeric">Color</th>
+                        <th class="numeric">Active</th>
+
+                        <th class="numeric">Tracker</th>
+                        <th class="numeric">Route</th>
+
+
+                        <th class="numeric"></th>
+                        <th class="numeric"></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="bus in buses">
+                        <td>#{{$index + 1}}</td>
+                        <td>{{bus.name}}</td>
+                        <td>{{bus.operator_name}}</td>
+                        <td class="numeric">{{bus.plate_no}}</td>
+                        <td class="numeric">{{bus.size}}</td>
+                        <td class="numeric">{{bus.color}}</td>
+                        <td class="numeric">{{bus.isActive}}</td>
+                        <td class="numeric">{{bus.tracker_name}}</td>
+                        <td class="numeric">{{bus.route_name}}</td>
+
+                        <td class="numeric">
+                            <a  href="#/bus/edit/{{bus._id}}" class="btn btn-default">
+                                    <span class="entypo-pencil"></span>&nbsp;&nbsp;Edit
+                            </a>
+                        </td>
+                         <td class="numeric">
+                          <input style="display:none;" type="text" name="name" ng-model="bus._id" />
+                            <button type="button"  class="btn btn-danger" ng-click="deleteBus(bus._id)">
+                                    <span class="entypo-cancel-squared"></span>&nbsp;&nbsp;Delete
+                            </button>
+                         </td>
+                       
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>

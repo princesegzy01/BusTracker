@@ -1,0 +1,125 @@
+<div class="col-md-12">
+        
+   
+    <div class="alert alert-danger" ng-show="error_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-attention"></span>
+        <strong>Oh snap!</strong>&nbsp;&nbsp;Ensure all field are supplied correctly, then try again.
+    </div>
+
+   <!--   <div class="alert alert-warning" ng-show="warning_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-attention"></span>
+        <strong>Duplicate Cordinates!</strong>&nbsp;&nbsp;{{txt_station_name}} with Same Cordinates exist, please try again  </div>
+     -->
+    <div class="alert alert-success" ng-show="success_form">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <span class="entypo-thumbs-up"></span>
+        <strong>Well done!</strong>&nbsp;&nbsp;You successfully Updated {{txt_name}}  Bus station.
+    </div>
+
+
+    <div class="body-nest" id="validation">
+        <div class="form_center">
+
+             <form name="form_editBus" id="form_editBus" ng-model="form_editBus" class="form-horizontal">
+                <fieldset>
+
+                     <input type="hidden" ng-model="txt_bus_id" required class="form-control" name="txt_bus_id" id="txt_bus_id">
+
+                
+                    <div class="control-group">
+                        <label class="control-label" for="name">Bus Name : </label>
+                        <div class="controls">
+                            <input type="text" ng-model="txt_name" required class="form-control" name="txt_name" id="txt_name">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="email">Operator</label>
+                        <div class="controls">
+                            <select ng-model="sel_operator" class="form-control">
+                                <option value=""> - Select Operators - </option>
+                              
+                                <option ng-repeat="operator in operators" value="{{operator._id}}">
+                                    {{operator.name}}
+                                </option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="email">Plate number : </label>
+                        <div class="controls">
+                            <input  ng-model="txt_plate_no"  type="text" required class="form-control" name="txt_plate_no" id="txt_plate_no">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="email">Size : </label>
+                        <div class="controls">
+                            <input  ng-model="txt_size"  type="text" required class="form-control" name="txt_size" id="txt_size">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="email">Color : </label>
+                        <div class="controls">
+                            <select ng-model="sel_color" class="form-control">
+                                <option value=""> - Select Color - </option>
+                                 <option value="Green">Green</option>
+                                 <option value="Blue">Blue</option>
+                                 <option value="Yellow">Yellow</option>
+                                 <option value="White">White</option>
+                                 <option value="Grey">Grey</option>
+                                 <option value="Black">Black</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+                    <div class="control-group">
+                        <label class="control-label" for="email">Active :</label>
+                        <div class="controls">
+                            <select ng-model="sel_status" class="form-control">
+                                <option value=""> - Status - </option>
+                                 <option value="Yes">Yes</option>
+                                 <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+
+                     <div class="control-group">
+                        <label class="control-label" for="email">Tracker : </label>
+                        <div class="controls">
+                            <select ng-model="sel_tracker" class="form-control">
+                                <option value=""> - Select Tracker - </option>
+                                <option ng-repeat="tracker in trackers" value="{{tracker._id}}">
+                                    {{tracker.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                     <div class="control-group">
+                        <label class="control-label" for="email">Route : </label>
+                        <div class="controls">
+                            <select ng-model="sel_route" class="form-control">
+                                <option value=""> - Select Route - </option>
+                                <option ng-repeat="route in routes" value="{{route._id}}">
+                                    {{route.name}}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    
+
+                    <div class="form-actions" style="margin:20px 0 0 0;">
+                        <button ng-click="editBus(form_editBus)" type="submit" class="btn btn-primary">Edit Bus</button>
+                        <button type="reset" class="btn">Cancel</button>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
