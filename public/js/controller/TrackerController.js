@@ -48,6 +48,7 @@ app.controller("addTracker",['$scope','$http','Tracker',function($scope, $http,T
             imei : $scope.txt_imei,
             manufacturer : $scope.txt_manufacturer,
             model : $scope.txt_model,
+            phone : $scope.txt_phone,
             isActive : $scope.sel_status
           }
 
@@ -61,6 +62,7 @@ app.controller("addTracker",['$scope','$http','Tracker',function($scope, $http,T
                  $scope.txt_imei = "";
                  $scope.txt_manufacturer = "";
                  $scope.txt_model = "";
+                 $scope.txt_phone = "";
                  
 
               }else{
@@ -96,6 +98,8 @@ app.controller('editTracker',['$scope','$routeParams','Tracker','$window',functi
         $scope.txt_imei = result.data[0].imei;
         $scope.txt_manufacturer = result.data[0].manufacturer;
         $scope.txt_model = result.data[0].model;
+        $scope.txt_phone = result.data[0].phone;
+
         $scope.sel_status = result.data[0].isActive;
       
 
@@ -119,7 +123,8 @@ app.controller('editTracker',['$scope','$routeParams','Tracker','$window',functi
                   name : $scope.txt_name,
                   imei : $scope.txt_imei,
                   model : $scope.txt_model,
-                  manufacturer : $scope.txt_manufacturer,
+                  manufacturer : $scope.txt_phone,
+                  phone : $scope.txt_manufacturer,
                   isActive : $scope.sel_status
                 }
 

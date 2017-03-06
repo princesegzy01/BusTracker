@@ -62,10 +62,35 @@ TrackerSchema = new mongoose.Schema({
   imei : String,
   manufacturer : String,
   model : String,
+  phone : String,
+  tracker_api_id : String,
   isActive : String,
   date: { type: Date, default: Date.now }
 });
 Tracker = mongoose.model('tracker', TrackerSchema);
+
+
+//Trip Schema
+TripSchema = new mongoose.Schema({
+  user_id :  String,
+  user_name : String,
+  user_email : String,
+  pickup : {
+    name :String,
+    state : String,
+    latitude : String,
+    longitude : String
+  },
+  destination : {
+    name :String,
+    state : String,
+    latitude : String,
+    longitude : String
+  },
+  status : String,
+  date: { type: Date, default: Date.now }
+});
+//Trip = mongoose.model('trip', TripSchema);
 
 
 //Feed Scheama
@@ -100,7 +125,8 @@ module.exports = {
     // BusSchema:BusSchema,
     TrackerSchema : TrackerSchema,
     BusAutomobile : BusAutomobile,
-    Tracker : Tracker
+    Tracker : Tracker,
+    TripSchema : TripSchema
 };
 
 

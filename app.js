@@ -21,6 +21,7 @@ var routeRest = require('./routes/routeRest');
 var operatorRest = require('./routes/operatorRest');
 var automobileRest = require('./routes/automobileRest');
 var trackerRest = require('./routes/trackerRest');
+var tripRest = require('./routes/tripRest');
 
 
 
@@ -54,6 +55,9 @@ app.use('/', routeRest);
 app.use('/', operatorRest);
 app.use('/', automobileRest);
 app.use('/', trackerRest);
+app.use('/', tripRest);
+// app.use('/', feedRest);
+
 
 
 // catch 404 and forward to error handler
