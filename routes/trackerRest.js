@@ -78,6 +78,9 @@ router.post('/Tracker', function(req, res, next){
 //add  tracker
 router.get('/getLastKnonwPositionOfTracker', function(req, res, next){
 
+
+		//console.log(req.body.tracker_array);
+
 	 var username = "princesegzy01@yahoo.com";
 	 var password = "1nigeria";
     
@@ -102,15 +105,16 @@ router.get('/getLastKnonwPositionOfTracker', function(req, res, next){
 						}, function(error, response, body){
 						   var result = JSON.parse(body);					  
 
-							var trackerIDS = [17,19,25,30,18];
+							// var trackerIDS = [17,19,25,30,18];
+							var trackerIDS = [20];
 							var trackerResponse = [];
 
 
 							//loop through each IDs
-							trackerIDS.forEach(function(tID){
+							//trackerIDS.forEach(function(tID){
 							// 	console.log(tID);
 								var arrFound = result.filter(function(item) {
-									  return item.deviceId ==  tID;
+									  return item.deviceId ==  20;//tID;
 								});
 
 								if(arrFound.length > 0){
@@ -118,7 +122,7 @@ router.get('/getLastKnonwPositionOfTracker', function(req, res, next){
 									trackerResponse.push(arrFound[0]);
 								}
 									
-							})
+							//})
 
 						   res.send(trackerResponse);
 				
