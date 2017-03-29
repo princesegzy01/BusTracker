@@ -22,6 +22,7 @@ var operatorRest = require('./routes/operatorRest');
 var automobileRest = require('./routes/automobileRest');
 var trackerRest = require('./routes/trackerRest');
 var tripRest = require('./routes/tripRest');
+var googleDistanceRest = require('./routes/googleDistanceRest');
 
 
 
@@ -56,6 +57,7 @@ app.use('/', operatorRest);
 app.use('/', automobileRest);
 app.use('/', trackerRest);
 app.use('/', tripRest);
+app.use('/', googleDistanceRest);
 // app.use('/', feedRest);
 
 
