@@ -77,6 +77,40 @@ router.get('/getTripById', function(req, res, next) {
 });
 
 
+
+/* Get single Trip By User ID*/
+router.get('/getTripByUserId', function(req, res, next) {
+	
+	//get Trip ID from parameter
+	user_id = req.query.user_id;
+	
+	
+	var Trip = mongoose.model('Trip', TripSchema);
+	Trip.find({'user_id':user_id},function(err, trip) {
+	  if (err) return console.error(err);
+	  res.send(trip);
+	});
+	
+});
+
+
+/* Get single Trip By User Email*/
+router.get('/getTripByUserEmail', function(req, res, next) {
+	
+	//get Trip ID from parameter
+	user_email = req.query.user_email;
+	
+	
+	var Trip = mongoose.model('Trip', TripSchema);
+	Trip.find({'user_email':user_email},function(err, trip) {
+	  if (err) return console.error(err);
+	  res.send(trip);
+	});
+	
+});
+
+
+
 router.get('/getAvailableBusTrip', function(req,res,next){
 
 		var busRoute = [];
