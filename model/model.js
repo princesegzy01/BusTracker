@@ -93,6 +93,18 @@ TripSchema = new mongoose.Schema({
 //Trip = mongoose.model('trip', TripSchema);
 
 
+//User Schema
+UserSchema = new mongoose.Schema({
+  user_name : String,
+  user_email : String,
+  password : String,
+  phone : String,
+  isActive : Boolean,
+  user_status : String,
+  date: { type: Date, default: Date.now }
+});
+
+
 //Feed Scheama
 FeedSchema =  new mongoose.Schema({
   customer : String,
@@ -126,7 +138,8 @@ module.exports = {
     TrackerSchema : TrackerSchema,
     BusAutomobile : BusAutomobile,
     Tracker : Tracker,
-    TripSchema : TripSchema
+    TripSchema : TripSchema,
+    UserSchema : UserSchema
 };
 
 

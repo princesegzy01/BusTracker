@@ -12,7 +12,7 @@ var database = require('./db/database');
 
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+//var users = require('./routes/users');
 var account = require('./routes/account');
 var admin = require('./routes/admin');
 var busStationRest = require('./routes/busStationRest');
@@ -23,6 +23,7 @@ var automobileRest = require('./routes/automobileRest');
 var trackerRest = require('./routes/trackerRest');
 var tripRest = require('./routes/tripRest');
 var googleDistanceRest = require('./routes/googleDistanceRest');
+var userRest = require('./routes/userRest');
 
 
 
@@ -47,7 +48,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', routes);
-app.use('/users', users);
+// app.use('/users', users);
 app.use('/account', account);
 app.use('/admin', admin);
 app.use('/', busStationRest);
@@ -58,6 +59,7 @@ app.use('/', automobileRest);
 app.use('/', trackerRest);
 app.use('/', tripRest);
 app.use('/', googleDistanceRest);
+app.use('/', userRest);
 // app.use('/', feedRest);
 
 
