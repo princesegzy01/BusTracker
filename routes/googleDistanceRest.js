@@ -20,7 +20,7 @@ router.get('/getDistanceBetweenTwoPoint',function(req,res, next){
 		// distance.key();
 		distance.mode(mode);
 		distance.avoid('tolls');
-		distance.units('metric');
+		distance.units('imperial');
 
 
 
