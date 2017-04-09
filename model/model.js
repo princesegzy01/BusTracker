@@ -42,7 +42,38 @@ OperatorSchema = new mongoose.Schema({
 });
 
 
-//Operator Schema
+
+//Schedule Schema
+ScheduleSchema = new mongoose.Schema({
+  name:  String,
+  email : String,
+  pickup:  
+  // [
+      {
+       name : String,
+       latitude : String,
+       longitude : String
+      }
+            // ]
+            ,
+dropoff:  
+// [
+          {
+           name : String,
+           latitude : String,
+           longitude : String
+          }
+        // ]
+        ,
+  occurrence:  String,
+  day:  String,
+  time :  String,
+  date: { type: Date, default: Date.now }
+});
+
+
+
+//Bus Schema
 BusSchema = new mongoose.Schema({
   name:  String,
   operator:  String,
@@ -139,7 +170,8 @@ module.exports = {
     BusAutomobile : BusAutomobile,
     Tracker : Tracker,
     TripSchema : TripSchema,
-    UserSchema : UserSchema
+    UserSchema : UserSchema,
+    ScheduleSchema : ScheduleSchema
 };
 
 

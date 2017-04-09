@@ -24,6 +24,7 @@ var trackerRest = require('./routes/trackerRest');
 var tripRest = require('./routes/tripRest');
 var googleDistanceRest = require('./routes/googleDistanceRest');
 var userRest = require('./routes/userRest');
+var scheduleRest = require('./routes/scheduleRest');
 
 
 
@@ -60,6 +61,7 @@ app.use('/', trackerRest);
 app.use('/', tripRest);
 app.use('/', googleDistanceRest);
 app.use('/', userRest);
+app.use('/', scheduleRest);
 // app.use('/', feedRest);
 
 
