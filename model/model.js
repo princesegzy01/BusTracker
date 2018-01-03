@@ -73,6 +73,43 @@ dropoff:
 
 
 
+//Schedule Schema
+CurrentTripSchema = new mongoose.Schema({
+  name:  String,
+  email : String,
+  pickup:  
+      {
+       name : String,
+       latitude : String,
+       longitude : String
+      },
+dropoff: 
+          {
+           name : String,
+           latitude : String,
+           longitude : String
+          }
+        ,
+  location : [{
+      bus_id : String,
+      bus_name : String,
+      eta : {
+        distance : {
+                  text : String,
+                  value : String
+               },
+        duration : {
+                  text : String,
+                  value : String
+               }
+          },
+      time :  { type: Date, default: Date.now }
+  }],
+  date: { type: Date, default: Date.now }
+});
+
+
+
 //Bus Schema
 BusSchema = new mongoose.Schema({
   name:  String,

@@ -90,5 +90,41 @@ router.get('/getRouteById', function(req, res, next) {
 
 
 
+//get route from bus stations
+router.get('/StationToRoute', function(req,res,next){
+
+		var busRoute = [];
+
+	 	var Bus_Route = mongoose.model('Bus_Route', RouteSchema);
+	 	
+	 	pickup = req.query.pickup;
+	 	dropoff = req.query.dropoff;
+
+		 Bus_Route.find({
+		 	stations : { $elemMatch: {station_id : pickup, station_id : dropoff }}
+
+		 },function(err, routes){
+
+
+		 	// get all routes for the bus stations
+		 	res.send(routes);
+		 });
+
+
+	});
+
+
+
+//get route from bus stations
+router.get('/getBusFromRoute', function(req,res,next){
+
+		route_id = req.query.route_id;
+	 BusAutomobile.find({'_id' : route_id }, function(err, Bus){
+	   		//console.log(Bus);
+	   		res.send(Bus);
+	   });
+
+	});
+
 
 module.exports = router;

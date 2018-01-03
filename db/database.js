@@ -1,8 +1,7 @@
 var mongoose = require('mongoose');
 
 
-// var dbURI = 'mongodb://localhost/BusTracker';
-var dbURI='mongodb://princesegzy01:1nigeria@ds013212.mlab.com:13212/bustracker';
+var dbURI = 'mongodb://localhost/BusTracker';
 
 //Lets connect to our database using the DB server URL.
 db = mongoose.connect(dbURI);
